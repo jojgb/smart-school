@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Siswa</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>indexTest</title>
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<form th:action="@{/createsiswa}">
+		<h3>Add Siswa</h3>
+		<div class="col">
+			<label>NIM</label> 
+			<input type="text" name="nim"  id="nim" class="form-control">
+		</div>
+		
+		<div class="col">
+			<label>Nama Siswa</label>
+			<input type="text" name="namasiswa"id="namasiswa" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Gender</label>
+			Pria<input type="radio" name="jeniskelamin" value="pria">
+			Wanita<input type="radio" name="jeniskelamin" value="wanita">
+		</div>
+		
+		<div class="col">
+			<label>Tanggal Lahir</label>
+			<input type="date" name="tanggallahir"id="tanggallahir" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Tempat Lahir</label>
+			<input type="text" name="tempatlahir"id="tempatlahir" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Wali Murid</label>
+			<input type="text" name="walimurid"id="walimurid" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Pekerjaan</label>
+			<input type="text" name="pekerjaan"id="pekerjaan" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Telepon Wali Murid</label>
+			<input type="text" name="teleponwali"id="teleponwali" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Alamat Murid</label>
+			<input type="text" name="alamatmurid"id="alamatmurid" class="form-control" >
+		</div>
+		
+		<div class="col">
+			<label>Kelas</label>
+			<input type="text" name="kelas"id="kelas" class="form-control" >
+		</div>
+		
+		<br><br>
+		<center>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</center>
+		
+		
+	</form>
+</body>
+</html>

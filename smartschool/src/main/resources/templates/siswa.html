@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Siswa</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>indexTest</title>
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<style>
+
+</style>
+<body>
+<H2>Data Siswa</H2>
+<center>
+<a th:href="@{/addsiswa}" class="btn btn-primary">Tambah Siswa</a>
+</center>
+<br>
+	<table class="table" border="1">
+		<thead class="thead-dark">
+			<tr>
+				<th>NIM</th>
+				<th>Nama Siswa</th>
+				<th>Kelas</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--  looping -->
+			<tr th:each = "siswaModel:${siswaModelList}">
+				<td th:text="${siswaModel.nimSiswa}"></td>
+				<td th:text="${siswaModel.namaSiswa}"></td>
+				<td th:text="${siswaModel.kelas}"></td>
+				<td>
+					<button class="btn btn-success">Edit</button>
+					<button class="btn btn-danger">Delete</button>
+					<button class="btn btn-primary">Detil</button>
+				</td>
+			</tr>
+			<!--  /looping -->
+		</tbody>
+	</table>
+</body>
+</html>
