@@ -22,5 +22,16 @@ public class SiswaService {
 	public List<SiswaModel> readData() {
 		return this.siswaRepository.findAll();
 	}
-
+	public SiswaModel detilSiswa(String nimSiswa) {
+		return this.siswaRepository.findById(nimSiswa).get();
+	}
+	public SiswaModel editSiswa(String nimSiswa) {
+		return this.siswaRepository.findById(nimSiswa).get();
+	}
+	public void updateSiswa(SiswaModel siswaModel) {
+		this.siswaRepository.save(siswaModel);
+	}
+	public void deleteSiswa(String nimSiswa) {
+		this.siswaRepository.deleteById(nimSiswa);
+	}
 }

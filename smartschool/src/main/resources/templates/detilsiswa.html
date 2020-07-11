@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Detil Siswa</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>indexTest</title>
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<div class="card">
+		<h5 class="card-header bg-dark text-white">Detil Siswa</h5>
+		<div class="card-body">
+			<form class="needs-validation" novalidate>
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationCustom01">Nim</label> <input type="text"
+							name="nim" id="nim" class="form-control"
+							th:placeholder="${siswaModel.nimSiswa}" readonly="readonly">
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationCustom02">Nama Siswa</label> <input
+							type="text" name="namasiswa" id="namasiswa" class="form-control"
+							th:placeholder="${siswaModel.namaSiswa}" disabled>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationCustomUsername">Gender</label>
+						<input
+							type="text" name="jeniskelamin" id="jeniskelamin" class="form-control"
+							th:placeholder="${siswaModel.gender}" disabled>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationCustom01">Tanggal Lahir</label> <input
+							type="text" name="tanggallahir" id="tanggallahir"
+							class="form-control" th:placeholder="${siswaModel.tanggalLahir}" disabled>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationCustom02">Tempat Lahir</label> <input
+							type="text" name="tempatlahir" id="tempatlahir"
+							class="form-control" th:placeholder="${siswaModel.tempatLahir}" disabled>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationCustomUsername">Wali Murid</label>
+						<div class="input-group">
+							<input type="text" name="walimurid" id="walimurid"
+								class="form-control" th:placeholder="${siswaModel.waliMurid}" disabled>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationCustom01">Pekerjaan</label> <input
+							type="text" name="pekerjaan" id="pekerjaan" class="form-control"
+							th:placeholder="${siswaModel.pekerjaan}" disabled>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationCustom02">Telepon Wali Murdi</label> <input
+							type="text" name="teleponwali" id="teleponwali"
+							class="form-control" th:placeholder="${siswaModel.telpWaliMurid}" disabled>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationCustomUsername">Kelas</label>
+						<div class="input-group">
+							<input type="text" name="kelas" id="kelas" class="form-control"
+								th:placeholder="${siswaModel.kelas}" disabled>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-8 mb-3">
+						<label for="validationCustomUsername">Alamat</label>
+						<div class="input-group">
+							<input type="" name="alamatmurid" id="alamatmurid"
+								class="form-control" th:placeholder="${siswaModel.alamatMurid}" disabled>
+						</div>
+					</div>
+				</div>
+				
+				<a th:href="@{/siswa}" class="btn btn-primary btn-sm btn-block">Back</a>
+		</div>
+	</div>
+	
+</body>
+</html>
