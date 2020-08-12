@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Detil Pelajaran</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="card">
+		<h5 class="card-header bg-dark text-white">Detil Pelajaran</h5>
+		<div class="card-body">
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationServer01">Kode Pelajaran</label> <input
+						type="text" name="kodepelajaran" id="kodepelajaran"
+						class="form-control" required="required" disabled="disabled"
+						th:placeholder="${pelajaranModel.kodePelajaran}">
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationServer02">Nama Pelajaran</label> <input
+						type="text" name="namapelajaran" id="namapelajaran"
+						class="form-control" disabled="disabled"
+						th:placeholder="${pelajaranModel.namaPelajaran}">
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationServer01">Tingkat</label> <input type="text"
+						name="tingkat" id="tingkat" class="form-control" readonly="readonly"
+						required th:placeholder="${pelajaranModel.tingkat}">
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<label for="validationServerUsername">Jam Ajar</label> <input
+						type="text" name="jamajar" id="jamajar" 
+						class="form-control" disabled="disabled" 
+						th:placeholder="${pelajaranModel.jamAjar}">
+				</div>
+			</div>
+
+
+
+			<div class="form-row">
+				<div class="col-md-8 mb-1">
+					<label for="validationCustomUsername">Keterangan</label>
+				</div>
+				<div class="col-md-8 mb-1">
+					<textarea class="form-control mb-5" rows="3" name="keterangan"
+						readonly="readonly" id="keterangan"
+						th:placeholder="${pelajaranModel.keterangan}"></textarea>
+				</div>
+
+			</div>
+
+
+			<a th:href="@{/pelajaran}" class="btn btn-primary btn-sm btn-block">Back</a>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

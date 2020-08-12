@@ -32,12 +32,12 @@ public class SiswaController {
 	@RequestMapping("/siswa")
 	public String Siswa(Model model) {
 		this.ListSiswa(model);
-		String html = "/siswa";
+		String html = "/siswa/siswa";
 		return html;
 	}
 	@RequestMapping("/addsiswa")
 	public String AddSiswa() {
-		String html = "/addsiswa";
+		String html = "/siswa/addsiswa";
 		return html;
 	}
 	@RequestMapping("/createsiswa")
@@ -50,7 +50,7 @@ public class SiswaController {
 		String tanggalLahir = request.getParameter("tanggallahir");
 		SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
 		Date tanggalLahirDate = formatDate.parse(tanggalLahir);
-		System.out.println(tanggalLahirDate);
+//		System.out.println(tanggalLahirDate);
 		///---- tanggal lahir ---////
 		
 		String tempatLahir = request.getParameter("tempatlahir");
@@ -81,16 +81,16 @@ public class SiswaController {
 		// listnya
 		this.ListSiswa(model);
 		
-		String html = "/siswa";
+		String html = "siswa/siswa";
 		return html;
 	
 	}
 	
 
 	
-	@RequestMapping("/detil/{nimSiswa}")
+	@RequestMapping("/detil/siswa/{nimSiswa}")
 	public ModelAndView DetilSiswa(@PathVariable(name = "nimSiswa") String nimSiswa) {
-		ModelAndView mav = new ModelAndView("/detilsiswa");
+		ModelAndView mav = new ModelAndView("/siswa/detilsiswa");
 		SiswaModel siswaModel = siswaService.detilSiswa(nimSiswa);
 		mav.addObject("siswaModel", siswaModel);
 		return mav;
@@ -98,9 +98,9 @@ public class SiswaController {
 	
 	//// ----  edit ----- ////
 	
-	@RequestMapping("/edit/{nimSiswa}")
+	@RequestMapping("/edit/siswa/{nimSiswa}")
 	public ModelAndView EditSiswa(@PathVariable(name = "nimSiswa") String nimSiswa) {
-		ModelAndView mav = new ModelAndView("/editsiswa");
+		ModelAndView mav = new ModelAndView("/siswa/editsiswa");
 		SiswaModel siswaModel = siswaService.editSiswa(nimSiswa);
 		mav.addObject("siswaModel", siswaModel);
 		return mav;
@@ -156,7 +156,7 @@ public class SiswaController {
 	
 	
 	/////----- delete ----////
-	@RequestMapping("/delete/{nimSiswa}")
+	@RequestMapping("/delete/siswa/{nimSiswa}")
 	public String deleteSiswa(@PathVariable(name = "nimSiswa") String nimSiswa) {
 	    siswaService.deleteSiswa(nimSiswa);
 	    return "redirect:/siswa";   

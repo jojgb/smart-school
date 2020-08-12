@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Detil Guru</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="card">
+		<h5 class="card-header bg-dark text-white">Detil Guru</h5>
+		<div class="card-body">
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationServer01">NIP</label> <input type="text"
+						name="nip" id="nip" class="form-control" required="required"
+						th:value="${guruModel.nip}" readonly="readonly">
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationServer02">Nama Guru</label> <input
+						type="text" name="namaguru" id="namaguru" class="form-control"
+						required th:value="${guruModel.namaGuru}" readonly="readonly">
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationServerUsername">Gender</label> <input
+						type="text" name="gender" id="gender" class="form-control"
+						required th:value="${guruModel.gender}" readonly="readonly">
+
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationServer02">Telepon</label> <input type="text"
+						name="telepon" id="telepon" class="form-control"
+						required="required" th:value="${guruModel.telepon}"
+						readonly="readonly">
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationServer02">Gelar</label> <input type="text"
+						name="gelar" id="gelar" class="form-control" required
+						th:value="${guruModel.gelar}" readonly="readonly">
+				</div>
+
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-8 mb-1">
+					<label for="validationCustomUsername">Alamat</label>
+				</div>
+				<div class="col-md-8 mb-1">
+					<textarea class="form-control mb-5" rows="3" name="alamat"
+						id="alamat" th:placeholder="${guruModel.alamat}" disabled="disabled"></textarea>
+				</div>
+			</div>
+		</div>
+
+		
+		<a th:href="@{/guru}" class="btn btn-primary btn-sm btn-block">Back</a>
+	</div>
+
+
+
+</body>
+</html>

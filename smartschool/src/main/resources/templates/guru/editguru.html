@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Guru</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<form th:action="@{/updateguru}">
+		<div class="card">
+			<h5 class="card-header bg-dark text-white">Edit Guru</h5>
+			<div class="card-body">
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationServer01">NIP</label> <input type="text"
+							name="nip" id="nip" class="form-control" required="required" th:value="${guruModel.nip}">
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationServer02">Nama Guru</label> <input
+							type="text" name="namaguru" id="namaguru" class="form-control"
+							required th:value="${guruModel.namaGuru}">
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationServerUsername">Gender</label>
+						<div style="display: flex;">
+							<div class="radio mr-3">
+								<label><input type="radio" name="gender" value="Pria"
+									checked> Pria</label>
+							</div>
+							<div class="radio">
+								<label><input type="radio" name="gender" value="Wanita">
+									Wanita</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationServer02">Telepon</label> <input type="text"
+							name="telepon" id="telepon" class="form-control"
+							required="required" th:value="${guruModel.telepon}">
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationServer02">Gelar</label> <select
+							class="custom-select" id="gelar" name="gelar">
+							<option selected disabled="disabled">Pilih Gelar</option>
+							<option value="spd">Spd</option>
+							<option value="sag">Sag</option>
+							<option value="skom">Skom</option>
+							<option value="se">Se</option>
+						</select>
+					</div>
+
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-8 mb-1">
+						<label for="validationCustomUsername">Alamat</label>
+					</div>
+					<div class="col-md-8 mb-1">
+						<textarea class="form-control mb-5" rows="3" name="alamat"
+							id="alamat" th:placeholder="${guruModel.alamat}"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-success btn-sm btn-block">Submit</button>
+			<a th:href="@{/guru}" class="btn btn-primary btn-sm btn-block">Back</a>
+		</div>
+
+	</form>
+
+
+</body>
+</html>

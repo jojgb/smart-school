@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Distributor</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+		<div class="card">
+			<h5 class="card-header bg-dark text-white">Detil Distributor</h5>
+			<div class="card-body">
+				<div class="form-row">
+					<div class="col-md-6 mb-3">
+						<label for="validationServer01">Kode Distributor</label> <input
+							type="text" name="kodedistributor" id="kodedistributor"
+							class="form-control" required="required" th:value="${distributorModel.kodeDistributor}" readonly="readonly">
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="validationServer02">Nama Distributor</label> <input
+							type="text" name="namadistributor" id="namadistributor"
+							class="form-control" required th:value="${distributorModel.namaDistributor}" readonly="readonly"> 
+					</div>
+
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-6 mb-3">
+						<label for="validationServerUsername">Tipe distributor</label> <select
+							class="custom-select" id="tipedistributor" name="tipedistributor" disabled="disabled">
+							<option selected disabled="disabled">Pilih Tipe</option>
+							<option value="Perusahaan">Perusahaan</option>
+							<option value="CV - Menengah ">CV - Menengah</option>
+							<option value="Individu">Individu</option>
+						</select>
+					</div>
+
+					<div class="col-md-6 mb-3">
+						<label for="validationServer02">Telepon</label> <input type="text"
+							name="telepon" id="telepon" class="form-control"
+							required="required" th:value="${distributorModel.telepon}" readonly="readonly">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-8 mb-1">
+						<label for="validationCustomUsername">Alamat</label>
+					</div>
+					<div class="col-md-8 mb-1">
+						<textarea class="form-control mb-5" rows="3" name="alamat"
+							id="alamat" th:placeholder="${distributorModel.alamat}" disabled="disabled"></textarea>
+					</div>
+				</div>
+			</div>
+
+			
+			<a th:href="@{/distributor}" class="btn btn-primary btn-sm btn-block">Back</a>
+		</div>
+
+
+
+
+</body>
+</html>
